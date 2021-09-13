@@ -1,6 +1,6 @@
 from __future__ import division # let 5/2 = 2.5 rather than 2
-from scalar.units import M, FT, IN, ARCDEG, RAD, LBF, SEC, KG, SLUG
-from scalar.units import AsUnit
+from Aerothon.scalar.units import M, FT, IN, ARCDEG, RAD, LBF, SEC, KG, SLUG
+from Aerothon.scalar.units import AsUnit
 from Aerothon.ACAircraft import ACTailAircraft
 from Aerothon.ACWingWeight import ACSolidWing
 from Aerothon.DefaultMaterialsLibrary import Monokote, PinkFoam, Balsa
@@ -56,12 +56,12 @@ Aircraft.VmaxPlt = 100*FT/SEC
 HTail = Aircraft.HTail
 HTail.Airfoil  = 'NACA0012'
 HTail.AR       = 3.5
-HTail.TR       = 0.5
-HTail.S        = 200 * IN**2
-#HTail.L        = 30 * IN
-HTail.VC       = 0.65
+HTail.TR       = 1.0
+HTail.S        = 300 * IN**2
+#HTail.L        = 40 * IN
+HTail.VC       = .6
 HTail.FullWing = True
-HTail.DWF      = 2.0 #Main wing Down wash factor (Between 1.0 and 2.0)
+HTail.DWF      = 1.6 #Main wing Down wash factor (Between 1.0 and 2.0)
 HTail.Inverted = False
 
 #
@@ -146,9 +146,9 @@ NoseGear.Wheel.Weight = 0.1*LBF
 
 if __name__ == '__main__':
     
-    TCG = Aircraft.CG()
+    #TCG = Aircraft.CG()
     ACG = Aircraft.Fuselage.AircraftCG()
-    dCG = TCG - ACG
+    #dCG = TCG - ACG
     
     print 'Aircraft Xnp   :', AsUnit( Aircraft.Xnp(), 'in' )
     print 'Aircraft Xcg   :', AsUnit( Aircraft.Xcg(), 'in' )
@@ -173,9 +173,9 @@ if __name__ == '__main__':
     print 'Vert Area      :', AsUnit( Aircraft.VTail.S, 'in**2' )
     print 'Vert Span      :', AsUnit( Aircraft.VTail.b, 'in' )
     print
-    print 'True CG        :', AsUnit( TCG[0], 'in' )
+    #print 'True CG        :', AsUnit( TCG[0], 'in' )
     print 'Desired CG     :', AsUnit( ACG[0], 'in' )
-    print 'delta CG       :', AsUnit( dCG[0], 'in' )
+    #print 'delta CG       :', AsUnit( dCG[0], 'in' )
     print 'Empty   Weight :', AsUnit( Aircraft.EmptyWeight, 'lbf' )
     print 'Payload Weight :', AsUnit( Aircraft.PayloadWeight(), 'lbf' )
     print

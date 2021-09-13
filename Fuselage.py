@@ -1,6 +1,6 @@
 from __future__ import division # let 5/2 = 2.5 rather than 2
-from scalar.units import IN, LBF, SLUG, FT, OZM, OZF
-from scalar.units import AsUnit
+from Aerothon.scalar.units import IN, LBF, SLUG, FT, OZM, OZF
+from Aerothon.scalar.units import AsUnit
 from Aerothon.ACFuselage import ACFuselage
 from Aerothon.DefaultMaterialsLibrary import Monokote
 

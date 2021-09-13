@@ -3,8 +3,8 @@ from Aerothon.ACPropeller import ACPropeller
 from Aerothon.ACEngine import ACEngine
 from Aerothon.ACPropulsion import ACPropulsion
 import numpy as npy
-from scalar.units import IN, LBF, PSFC, SEC, ARCDEG, FT, OZF, RPM, HP
-from scalar.units import AsUnit
+from Aerothon.scalar.units import IN, LBF, PSFC, SEC, ARCDEG, FT, OZF, RPM, HP
+from Aerothon.scalar.units import AsUnit
 
 # Set Propeller properties
 Prop = ACPropeller()
