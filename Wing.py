@@ -9,7 +9,7 @@ from Aerothon.ACWingWeight import ACSolidWing, ACRibWing
 # Create the wing
 #
 Wing = ACMainWing(1)
-Wing.Lift_LO       = 31 * LBF    # Desired lift at liftoff
+Wing.Lift_LO       = 35 * LBF    # Desired lift at liftoff
 Wing.V_max_climb   = 65 * FT/SEC # liftoff speed
 Wing.Alt_LO        = 920 * FT    # liftoff altitude
 Wing.AR            = 8.0         # Aspect Ratio
