@@ -12,6 +12,7 @@ from Aerothon.AeroUtil import STDCorrection
 from Aerothon.ACMotor import ACBattery
 
 from Aerothon.ACMotor import ACMotor
+from Aerothon.ACMotor import ACSpeedController
 
 """
 I'm just importing the 2015 Propulsion all in one file for a bit of simplicity just as a starting point
@@ -59,6 +60,13 @@ MainBattery.C_Rating = 25
 MainBattery.Weight = .915*LBF
 MainBattery.LWH = (1.375*IN,1.875*IN,6.0*IN) #inaccurate dimensions
 
+###################################
+# SPEED CONTROLLER PROPERTIES
+###################################
+Phoenix100 = ACSpeedController()
+Phoenix100.Weight = 91.5*GRAM*gacc
+Phoenix100.Imax = 100*A
+Phoenix100.LWH = (1.5*IN, 2*IN, 0.75*IN)
 
 ###################################
 # MOTOR PROPERTIES
@@ -66,6 +74,7 @@ MainBattery.LWH = (1.375*IN,1.875*IN,6.0*IN) #inaccurate dimensions
 Motor  = ACMotor()
 Motor.name = 'Hacker_A50_14L'
 Motor.Battery = MainBattery
+Motor.SpeedController = Phoenix100
 #Matched data
 Motor.Ri = .12*OHM
 Motor.Io = .5*A
@@ -78,6 +87,8 @@ Motor.xRm =  100000
 Motor.Pz  = 0.0
 Motor.Weight = 445*GRAM*gacc
 Motor.LenDi = [46.8*MM, 59.98*MM]
+
+
 
 ###################################
 # COMBINED PROPERTIES
