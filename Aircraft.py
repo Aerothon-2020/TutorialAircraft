@@ -18,6 +18,12 @@ Aircraft.name = 'Tutorial Aircraft'
 # 
 # Assign the already generated parts
 #
+"""
+Note here that the fuselage is mostly defined in real terms. You could do some math in the Aircraft.py to get the 
+attributes of the tail below after it's calculated and do an iterative process to make it all line up as HTail.L
+and VTail.L will be calculated as part of the aircraft design process. Or you can manually converge that be either editing
+your fuselage, or editing the fuselage in this file by calling it's attributes here.
+"""
 Aircraft.SetFuselage(Fuselage)
 Aircraft.SetPropulsion(Propulsion)
 Aircraft.SetWing(Wing)
@@ -53,6 +59,17 @@ Aircraft.VmaxPlt = 100*FT/SEC
 #==============================================================================
 # Horizontal tail
 #
+"""
+Note that the horizontal tail here is being set in the x-axis by the Htail.VC, and S. The volume coefficient is
+placing the tail. This is a good way to start early studies because it doesn't lock you into length. This means that 
+you have two ways to move the tail, you can either change it's Volume Coeffecient, or change it's geometric properties.
+
+Once you have a final design you like, then you can start locking in real lengths. But this is a good way to understand 
+the sensitivities. Note that right now the VTail is disconnected from the aircraft. To bring it in you could either 
+decrease it's volume coefficienct, or increase it's area. 
+
+The size of the tail is being set by AR, and S. But you could specify a span and AR, span and S, b and S, etc.
+"""
 HTail = Aircraft.HTail
 HTail.Airfoil  = 'NACA0012'
 HTail.AR       = 3.5
@@ -90,6 +107,17 @@ HTail.WingWeight.WingMat                    = PinkFoam.copy()
 #==============================================================================
 # Vertical tail
 #
+"""
+Note that the vertical tail here is being set in the x-axis by the Vtail.VC, and S. The volume coefficient is
+placing the tail. This is a good way to start early studies because it doesn't lock you into length. This means that 
+you have two ways to move the tail, you can either change it's Volume Coeffecient, or change it's geometric properties.
+
+Once you have a final design you like, then you can start locking in real lengths. But this is a good way to understand 
+the sensitivities. Note that right now the VTail is disconnected from the aircraft. To bring it in you could either 
+decrease it's volume coefficienct, or increase it's area. 
+
+The size of the tail is being set by AR, and S. But you could specify a span and AR, span and S, b and S, etc.
+"""
 VTail = Aircraft.VTail
 VTail.Airfoil = 'NACA0012'
 VTail.VC      = 0.05
@@ -98,6 +126,7 @@ VTail.TR      = 0.7
 VTail.Axis    = (0, 1)
 #VTail.L       = 51.572 * IN
 VTail.S       = 69 * IN**2
+
 #VTail.b       = 10 * IN
 
 #
