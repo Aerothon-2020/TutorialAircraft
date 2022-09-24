@@ -26,7 +26,7 @@ Fuselage.AddSection('Tail')
 Note im just using a fixed weight for the firewall, that's fine
 Things you will want to include later would be:
  StringerMat which will give you the weight of whatever attaches the FrontBulk to BackBulk
- SkinMat which would give you monokote weight assuming it covers all sections
+
 
 We're going to put the battery in here as it's significant weight, but you 
 should model every single thing in the fuselage as a weight somewhere
@@ -35,6 +35,8 @@ so you don't mess up your CG.
 Fuselage.Nose.FrontBulk.Width  = 3*IN
 Fuselage.Nose.FrontBulk.Height = 7*IN
 Fuselage.Nose.FrontBulk.Weight = .2*LBF
+Fuselage.Nose.StringerMat.AreaForceDensity = 0.001*LBF/IN**2
+Fuselage.Nose.SkinMat = Monokote.copy()
 
 # we need to put the battery in here, it's significant weight
 Fuselage.Nose.AddComponent("MotorBattery"  , MotorBattery.Weight, MotorBattery.LWH , "Back"  , (0.45 , .5, .5) )
@@ -50,7 +52,8 @@ Fuselage.PyldBay.FrontBulk.Width  = 5*IN
 Fuselage.PyldBay.FrontBulk.Height = 5*IN
 Fuselage.PyldBay.BackBulk.Width   = 5*IN
 Fuselage.PyldBay.BackBulk.Height  = 5*IN
-Fuselage.PyldBay.SkinMat.AreaForceDensity = 0.001*LBF/IN**2
+Fuselage.PyldBay.StringerMat.AreaForceDensity = 0.001*LBF/IN**2
+Fuselage.PyldBay.SkinMat = Monokote.copy()
 
 # notoinal placement for payload, this basically just puts t in the payload bay
 Fuselage.Payload.Width  = 4*IN
@@ -73,7 +76,8 @@ Fuselage.Tail.BackBulk.Width = 2.25*IN
 Fuselage.Tail.BackBulk.Height = 2*IN
 Fuselage.Tail.BackBulk.X = [60*IN, 0*IN, 0*IN]
 Fuselage.Tail.Align = 1
-Fuselage.Tail.StringerMat.LinearForceDensity = 0.01*LBF/IN
+Fuselage.Tail.StringerMat.AreaForceDensity = 0.001*LBF/IN**2
+Fuselage.Tail.SkinMat = Monokote.copy()
 
 # Tell it to put the htail on the backbulk
 Fuselage.TailBulk = Fuselage.Tail.BackBulk
