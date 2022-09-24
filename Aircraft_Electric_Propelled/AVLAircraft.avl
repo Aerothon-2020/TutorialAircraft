@@ -1,0 +1,102 @@
+Tutorial Aircraft_Gas_Propelled
+0.0			| Mach
+0 0 0.0		| iYsym  iZsym  Zsym
+1152.0 12.2385204082 96.0		| Sref   Cref   Bref
+10.342519685 0.0 8.5		| Xref   Yref   Zref
+0.0			| CDp  (optional)
+#==============================================================
+#
+SURFACE
+Horizontal Tail
+10  1.0  20  -2.0  |  Nchord   Cspace   Nspan  Sspace
+
+YDUPLICATE
+0.0
+
+ANGLE
+2.01133948763
+
+INDEX
+2
+#-----------------------
+SECTION
+36.225520456 0.0 10.0   9.25820099773  0 0 0 | Xle Yle Zle   Chord   Ainc   [ Nspan Sspace ]
+AFIL
+"C:\Users\mwybo\PycharmProjects\UC_Aircraft_Design\Airfoils\NACA0012\NACA0012.dat"
+CONTROL
+Elevator  1.0  0.65  0. 0. 0.  1.0 | Name  gain  Xhinge  XYZhvec  SgnDup
+#-----------------------
+SECTION
+36.225520456 16.201851746 10.0   9.25820099773  0 0 0 | Xle Yle Zle   Chord   Ainc   [ Nspan Sspace ]
+AFIL
+"C:\Users\mwybo\PycharmProjects\UC_Aircraft_Design\Airfoils\NACA0012\NACA0012.dat"
+CONTROL
+Elevator  1.0  0.65  0. 0. 0.  1.0 | Name  gain  Xhinge  XYZhvec  SgnDup
+#==============================================================
+#
+SURFACE
+ACMainWing
+10  1.0  20  -2.0  |  Nchord   Cspace   Nspan  Sspace
+
+YDUPLICATE
+0.0
+
+ANGLE
+0.0
+
+INDEX
+1
+#-----------------------
+SECTION
+4.41397364946 0.0 11.0   13.3928571429  0 0 0 | Xle Yle Zle   Chord   Ainc   [ Nspan Sspace ]
+AFIL
+"C:\Users\mwybo\PycharmProjects\UC_Aircraft_Design\Airfoils\CLi4005b\CLi4005b.dat"
+#-----------------------
+SECTION
+4.41397364946 19.2 11.0   13.3928571429  0 0 0 | Xle Yle Zle   Chord   Ainc   [ Nspan Sspace ]
+AFIL
+"C:\Users\mwybo\PycharmProjects\UC_Aircraft_Design\Airfoils\CLi4005b\CLi4005b.dat"
+#-----------------------
+SECTION
+4.41397364946 24.0 11.0998933036   12.7232142857  0 0 0 | Xle Yle Zle   Chord   Ainc   [ Nspan Sspace ]
+AFIL
+"C:\Users\mwybo\PycharmProjects\UC_Aircraft_Design\Airfoils\CLi4005b\CLi4005b.dat"
+CONTROL
+Aileron  1.0  0.75  0. 0. 0.  -1.0 | Name  gain  Xhinge  XYZhvec  SgnDup
+#-----------------------
+SECTION
+4.41397364946 38.4 11.3995732143   10.7142857143  0 0 0 | Xle Yle Zle   Chord   Ainc   [ Nspan Sspace ]
+AFIL
+"C:\Users\mwybo\PycharmProjects\UC_Aircraft_Design\Airfoils\CLi4005b\CLi4005b.dat"
+CONTROL
+Aileron  1.0  0.75  0. 0. 0.  -1.0 | Name  gain  Xhinge  XYZhvec  SgnDup
+#-----------------------
+SECTION
+4.41397364946 48.0 11.8790610714   7.5  0 0 0 | Xle Yle Zle   Chord   Ainc   [ Nspan Sspace ]
+AFIL
+"C:\Users\mwybo\PycharmProjects\UC_Aircraft_Design\Airfoils\CLi4005b\CLi4005b.dat"
+#==============================================================
+#
+SURFACE
+Vertical Tail
+10  1.0  20  -2.0  |  Nchord   Cspace   Nspan  Sspace
+
+ANGLE
+0.0
+
+INDEX
+3
+#-----------------------
+SECTION
+48.4806252647 0.0 10.0   7.72583855092  0 0 0 | Xle Yle Zle   Chord   Ainc   [ Nspan Sspace ]
+AFIL
+"C:\Users\mwybo\PycharmProjects\UC_Aircraft_Design\Airfoils\NACA0012\NACA0012.dat"
+CONTROL
+Rudder  1.0  0.6  0. 0. 0.  1.0 | Name  gain  Xhinge  XYZhvec  SgnDup
+#-----------------------
+SECTION
+49.8712762039 0.0 20.5071404293   5.40808698564  0 0 0 | Xle Yle Zle   Chord   Ainc   [ Nspan Sspace ]
+AFIL
+"C:\Users\mwybo\PycharmProjects\UC_Aircraft_Design\Airfoils\NACA0012\NACA0012.dat"
+CONTROL
+Rudder  1.0  0.6  0. 0. 0.  1.0 | Name  gain  Xhinge  XYZhvec  SgnDup
