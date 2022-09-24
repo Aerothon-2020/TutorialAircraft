@@ -4,7 +4,7 @@ from Aerothon.scalar.units import AsUnit
 from Aerothon.ACAircraft import ACTailAircraft
 from Aerothon.ACWingWeight import ACSolidWing
 from Aerothon.DefaultMaterialsLibrary import Monokote, PinkFoam, Balsa
-from Aircraft_Gas_Propelled.Fuselage import Fuselage
+from Fuselage import Fuselage
 from Propulsion_Electric import Propulsion
 from Aircraft_Gas_Propelled.Wing import Wing
 import pylab as pyl
@@ -208,9 +208,9 @@ if __name__ == '__main__':
     print 'Wing       MOI :', AsUnit(Aircraft.Wing.MOI(), 'slug*ft**2', '%3.5f')
     print 'HTail      MOI :', AsUnit(Aircraft.HTail.MOI(), 'slug*ft**2', '%3.5f')
     print 'VTail      MOI :', AsUnit(Aircraft.VTail.MOI(), 'slug*ft**2', '%3.5f')
-    print 'Aircraft_Gas_Propelled   MOI :', AsUnit(Aircraft.MOI(), 'slug*ft**2', '%3.5f')
+    print 'Aircraft   MOI :', AsUnit(Aircraft.MOI(), 'slug*ft**2', '%3.5f')
     print
-    print 'Aircraft_Gas_Propelled Groundroll :', AsUnit(Aircraft.Groundroll(), 'ft')
+    print 'Aircraft Groundroll :', AsUnit(Aircraft.Groundroll(), 'ft')
 
     #    Aircraft_Gas_Propelled.PlotCLCMComponents(fig = 7, del_es = (-10*ARCDEG, -5*ARCDEG, 0*ARCDEG, +5*ARCDEG, +10 * ARCDEG))
     Aircraft.PlotTailLoad(fig=6)

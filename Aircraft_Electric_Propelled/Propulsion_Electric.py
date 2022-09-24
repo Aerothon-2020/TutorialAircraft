@@ -52,13 +52,13 @@ Prop.MaxTipSpeed = None
 # BATTERY PROPERTIES
 ###################################
 # Turnicy 6Cell 3000
-MainBattery = ACBattery()
-MainBattery.Voltage = 22.2*V
-MainBattery.Cells = 6
-MainBattery.Capacity = 3000*mAh
-MainBattery.C_Rating = 25
-MainBattery.Weight = .915*LBF
-MainBattery.LWH = (1.375*IN,1.875*IN,6.0*IN) #inaccurate dimensions
+MotorBattery = ACBattery()
+MotorBattery.Voltage = 22.2*V
+MotorBattery.Cells = 6
+MotorBattery.Capacity = 3000*mAh
+MotorBattery.C_Rating = 25
+MotorBattery.Weight = .915*LBF
+MotorBattery.LWH = (1.375*IN,1.875*IN,6.0*IN) #inaccurate dimensions
 
 ###################################
 # SPEED CONTROLLER PROPERTIES
@@ -73,7 +73,7 @@ Phoenix100.LWH = (1.5*IN, 2*IN, 0.75*IN)
 ###################################
 Motor  = ACMotor()
 Motor.name = 'Hacker_A50_14L'
-Motor.Battery = MainBattery
+Motor.Battery = MotorBattery
 Motor.SpeedController = Phoenix100
 #Matched data
 Motor.Ri = .12*OHM
