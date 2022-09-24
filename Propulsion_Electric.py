@@ -79,6 +79,13 @@ Motor.Pz  = 0.0
 Motor.Weight = 445*GRAM*gacc
 Motor.LenDi = [46.8*MM, 59.98*MM]
 
+###################################
+# COMBINED PROPERTIES
+###################################
+Propulsion = ACPropulsion(Prop,Motor)
+Propulsion.Alt  = 0*FT
+Propulsion.Vmax =70*FT/SEC
+Propulsion.nV   = 20
 
 if __name__=='__main__':
     ###########################
@@ -165,5 +172,17 @@ if __name__=='__main__':
     print "Max efficiency RPM : ", AsUnit(Motor.N_Effmax(), 'rpm')
 
     Motor.PlotTestData(fig=4)
+
+    ###########################
+    # SYSTEM DATA AND PLOTS
+    ##########################
+
+    Propulsion_VMAX = 70
+    Vi = npy.linspace(0,Vmax,30)*FT/SEC
+    Vprop = npy.linspace(0,Vmax,5)*FT/SEC
+    Prop_Ni = npy.linspace(1000,7000,30)*RPM
+    Propulsion.PlotMatched(Vi, Prop_Ni, Vprop, fig=5)
+
+    Propulsion.Draw(fig=6)
 
     pyl.show()
