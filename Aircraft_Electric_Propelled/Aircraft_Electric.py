@@ -1,5 +1,5 @@
 from __future__ import division  # let 5/2 = 2.5 rather than 2
-from Aerothon.scalar.units import FT, IN, ARCDEG, LBF, SEC
+from Aerothon.scalar.units import FT, IN, ARCDEG, LBF, SEC, RPM
 from Aerothon.scalar.units import AsUnit
 from Aerothon.ACAircraft import ACTailAircraft
 from Aerothon.ACWingWeight import ACSolidWing
@@ -8,6 +8,7 @@ from Fuselage import Fuselage
 from Propulsion_Electric import Propulsion
 from Aircraft_Gas_Propelled.Wing import Wing
 import pylab as pyl
+import numpy as npy
 
 #
 # Create the Aircraft_Gas_Propelled
@@ -26,6 +27,7 @@ your fuselage, or editing the fuselage in this file by calling it's attributes h
 """
 Aircraft.SetFuselage(Fuselage)
 Aircraft.SetPropulsion(Propulsion)
+Aircraft.Propulsion.PowerLimitMax = None
 Aircraft.SetWing(Wing)
 
 #
@@ -218,6 +220,13 @@ if __name__ == '__main__':
     Aircraft.PlotPolarsSlopes(fig=4)
     #    Aircraft_Gas_Propelled.PlotDragBuildup(fig=3)
     Aircraft.PlotPropulsionPerformance(fig=2)
+
+    Vmax  =50
+    Vi = npy.linspace(0,Vmax,30)*FT/SEC
+    Vprop = npy.linspace(0,Vmax,5)*FT/SEC
+    Prop_Ni = npy.linspace(1000,7000,30)*RPM
+    Aircraft.Propulsion.PlotMatched(Vi, Prop_Ni, Vprop, fig=5)
+
     Aircraft.Draw()
 
     Aircraft.WriteAVLAircraft('AVLAircraft.avl')
